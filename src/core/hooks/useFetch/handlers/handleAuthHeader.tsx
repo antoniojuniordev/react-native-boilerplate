@@ -1,4 +1,3 @@
-
 interface session {
   token: string
 }

@@ -1,11 +1,11 @@
-import { handleResponse } from './handlers/handleResponse'
+import { handleResponse } from './handlers/handleResponse';
 import { handlerParams } from './handlers/handlerParams'
 // import handleAuthHeader from './handlers/handleAuthHeader'
 
 type UseFetchProps = {
-  method: 'get' | 'post'
-  url: string
-  body?: object
+  method: 'get' | 'post';
+  url: string;
+  body?: object;
   params?: object
 }
 
@@ -14,14 +14,13 @@ export default function useFetch({ method, url, params, body }: UseFetchProps) {
   const requestOptions: RequestInit = {
     method,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
       // ...handleAuthHeader()
-    }
-  }
-  if (body) requestOptions.body = JSON.stringify(body)
+    },
+  };
+  if (body) requestOptions.body = JSON.stringify(body);
 
-  return fetch(
-    handlerParams(`${url}`, params),
-    requestOptions
-  ).then(handleResponse)
+  return fetch(handlerParams(`${url}`, params), requestOptions).then(
+    handleResponse,
+  );
 }

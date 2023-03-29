@@ -1,14 +1,13 @@
-
-export function handleResponse (response: Response) {
+export function handleResponse(response: Response) {
   return response.text().then((text: string) => {
-    const data = text && JSON.parse(text)
+    const data = text && JSON.parse(text);
 
     if (!response.ok) {
       // if ([401].includes(response.status)) destroySession()
-      const error = (data && data.message) || response.statusText
-      return { error }
+      const error = (data && data.message) || response.statusText;
+      return { error };
     }
 
-    return { success: data }
-  })
+    return { success: data };
+  });
 }

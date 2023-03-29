@@ -1,31 +1,21 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
-  Text,
-  useColorScheme,
-  View
+  useColorScheme
 } from 'react-native'
 
-import { Colors } from 'react-native/Libraries/NewAppScreen'
-import useFetch from './core/hooks/useFetch'
+
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Routes from './routes/routes'
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark'
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1
   }
-
-  async function getUser() {
-    const resp = await useFetch({ method: 'get', url: 'https://60c4a8e9ec8ef800175e04c2.mockapi.io/user' })
-    console.log(resp)
-  }
-
-  useEffect(() => {
-    getUser()
-  }, [])
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -33,16 +23,8 @@ function App() {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white
-          }}
-        />
-        <Text>oiii</Text>
-      </ScrollView>
+
+      <Routes />
     </SafeAreaView>
   )
 }

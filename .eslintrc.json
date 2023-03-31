@@ -24,7 +24,9 @@
     ],
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-      "no-use-before-define": ["error", { "variables": false }],
-      "react/prop-types": ["error", {"ignore": ["navigation", "navigation.navigate"]}]
+      "no-use-before-define": "off",
+      "react/prop-types": ["error", {"ignore": ["navigation", "navigation.navigate"]}],
+      "import/no-unresolved": "off",
+      "import/extensions": "off"
     }
 }

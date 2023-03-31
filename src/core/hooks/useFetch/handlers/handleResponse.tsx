@@ -1,6 +1,6 @@
-export function handleResponse(response: Response) {
+export default function handleResponse(response: Response) {
   return response.text().then((text: string) => {
-    const data = text && JSON.parse(text);
+    const data = parseJson(text);
 
     if (!response.ok) {
       // if ([401].includes(response.status)) destroySession()
@@ -10,4 +10,12 @@ export function handleResponse(response: Response) {
 
     return { success: data };
   });
+}
+
+function parseJson(data: string) {
+  try {
+    return data && JSON.parse(data);
+  } catch (error) {
+    return false;
+  }
 }

@@ -1,5 +1,5 @@
-import { handleResponse } from './handlers/handleResponse';
-import { handlerParams } from './handlers/handlerParams'
+import handleResponse from './handlers/handleResponse';
+import handlerParams from './handlers/handlerParams';
 // import handleAuthHeader from './handlers/handleAuthHeader'
 
 type UseFetchProps = {
@@ -9,7 +9,9 @@ type UseFetchProps = {
   params?: object
 }
 
-export default function useFetch({ method, url, params, body }: UseFetchProps) {
+export default function useFetch({
+  method, url, params, body,
+}: UseFetchProps) {
   // eslint-disable-next-line no-undef
   const requestOptions: RequestInit = {
     method,
@@ -22,5 +24,5 @@ export default function useFetch({ method, url, params, body }: UseFetchProps) {
 
   return fetch(handlerParams(`${url}`, params), requestOptions).then(
     handleResponse,
-  );
+  ).catch((error) => ({ error, success: false }));
 }

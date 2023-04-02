@@ -5,8 +5,8 @@ module.exports = {
       require.resolve('babel-plugin-module-resolver'),
       {
         root: ['./src'],
-        extensions: ['.ts', '.tsx', '.js', '.json']
-      }
-    ]
-  ]
-}
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+      },
+    ],
+  ],
+};

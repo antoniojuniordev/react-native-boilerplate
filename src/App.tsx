@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import Routes from './routes/routes';
+import ProvidersConfig from './ProvidersConfig';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -22,8 +22,7 @@ function App() {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-
-      <Routes />
+      <ProvidersConfig />
     </SafeAreaView>
   );
 }

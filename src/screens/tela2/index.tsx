@@ -8,7 +8,7 @@ function Tela2() {
       <Styled.Text>
         tela 2
       </Styled.Text>
-      <Text style={{ fontFamily: 'SourceSansPro-Black', fontSize: 32 }}> tessswsss</Text>
+      <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 32 }}> tessswsss</Text>
     </Styled.First>
   );
 }

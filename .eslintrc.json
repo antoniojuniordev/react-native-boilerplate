@@ -30,6 +30,7 @@
       "import/extensions": "off",
       "react/jsx-no-constructed-context-values": "off",
       "react/jsx-props-no-spreading": "off",
+      "@typescript-eslint/no-explicit-any": "on",
       "import/no-extraneous-dependencies": "off"
     }
 }

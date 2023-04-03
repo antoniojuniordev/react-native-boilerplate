@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   TouchableOpacityProps,
 } from 'react-native';
-
+import * as Styled from './styles'
 interface PropsButton extends TouchableOpacityProps {
   text: string
 }
@@ -16,7 +16,7 @@ export default function Button({
   ...rest
 }: PropsButton) {
   return (
-    <TouchableOpacity
+    <Styled.Button
       {...rest}
       onPress={(e: GestureResponderEvent) => {
         if (onPress) {
@@ -24,7 +24,7 @@ export default function Button({
         }
       }}
     >
-      <Text>{text}</Text>
-    </TouchableOpacity>
+      <Styled.Text>{text}</Styled.Text>
+    </Styled.Button>
   );
 }

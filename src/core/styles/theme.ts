@@ -1,4 +1,9 @@
 export default {
+  font: {
+    light: 'OpenSans-Light',
+    regular: 'OpenSans-Regular',
+    bold: 'OpenSans-Bold',
+  },
   colors: {
     primary: '#4A3474',
     secondary: '#2B2B40',

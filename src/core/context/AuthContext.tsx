@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 
 interface AuthProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export const AuthContext = createContext({ token: '', user: '' });
